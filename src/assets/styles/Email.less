@@ -1,33 +1,50 @@
 @width: 100%;
-
 .cont-flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 .cont-input {
   align-items: flex-start;
   gap: 10px;
   width:@width;
-  height: 80px;
-  
+  height: 80px; 
   label{
       font-size: 1.2rem;
       font-weight: 500;
-      color: rgb(109, 108, 108);
+      color: #ffffff;
   }
-  input {
+  input{
+    color: #ffffff;
     padding: 5px;
     width:@width;
     height: 40px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+    }
+    input::placeholder{
+        color: #ffffff;
+        font-size: 0.4rem;
+    }
 }
-}
-
 
 .cont-email {
-
+    .check{
+        position: absolute;
+        .cont-flex();
+        width: 50px;
+        height: 50px;
+        background-color: green;
+        border-radius: 50%;
+        i{
+            font-size: 2rem;
+        }
+        animation: check 2s ease-in  1;
+    
+    }
+   
     background-image: url("../img/fondo.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -43,10 +60,11 @@
         gap: 15px;
         
         position: relative;
-        width:300px;
-        height: 400px;
-        background-color: white;
-        color: black;
+        width:270px;
+        height: 370px;
+        background-color: transparent;
+        backdrop-filter: blur(10px);
+        
         border-radius: 10px;
         padding: 15px;
 
@@ -62,6 +80,13 @@
       width:@width;
       height: calc(100% - 180px);
       padding: 5px;
+      background-color: transparent;
+      border: 2px solid #ffffff;
+      border-radius: 2px;
+    }
+    .text-mensaje::placeholder{
+        font-size: 1.2rem;
+        color: #ffffff;
     }
     .btn-enviar{
         position: absolute;
@@ -75,6 +100,7 @@
         box-shadow: 1px 1px 8px black;
         cursor: pointer;
         transition: all 0.5s ease-in-out;
+       
         
         i{
             font-size: 1.3rem;
@@ -83,7 +109,7 @@
 
     }
     .btn-enviar:hover{
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.509);
         border: 2px solid green;
         transition: all 0.5s ease-in-out;
         scale: 1.2;
@@ -92,4 +118,16 @@
         }
     }
   }
+}
+// checking   
+
+@keyframes check {
+    0%{
+        top: -50%;
+        transform: rotate(180deg);
+    }
+    100%{
+        top: 50%;
+        transform: rotate(360deg);
+    }     
 }
